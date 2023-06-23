@@ -27,17 +27,23 @@ public class Program {
 					ArrayList<Hospede> hospedes = new ArrayList<>();
 					System.out.println("Digite a quantidade de camas que deseja cadastrar");
 					int qtdCamas = sc.nextInt();
+					
+					
+					
 					for(int i = 1; i<=qtdCamas; i++) {
 						System.out.println("Digite o codigo da cama " + i +":");
+						
 						int cod = sc.nextInt();
+						
 						sc.nextLine();
 						Cama cama = new Cama(cod);
 						camas.add(cama);
+						
+					
 					}
 					
 					
-						
-					
+			
 					System.out.println("Hospede Adulto ou crianca (a/c)");
 					char tipo1 = sc.next().toLowerCase().charAt(0);
 					System.out.println("Digite o codigo do hospede: ");
@@ -66,6 +72,11 @@ public class Program {
 					char tipo2 = sc.next().toUpperCase().charAt(0) ;
 					System.out.println("Digite o codigo da reserva: ");
 					int codReserva = sc.nextInt();
+					for(Reserva res : reserva) {
+						if(codReserva == res.getCod());
+						System.out.println("Codigo já existe, digite outro: ");
+						codReserva = sc.nextInt();
+					}
 					
 					try {
                         System.out.println("Digite a data de entrada Exemplo: 2023-06-01");
@@ -93,7 +104,6 @@ public class Program {
     						reserva.add(reservaCrianca);
     						System.out.println("Sua reserva de crianca foi feita com sucesso!");
     					}
-    					
     					
 
                         // Crie o objeto Reserva e adicione-o à lista de reservas aqui
